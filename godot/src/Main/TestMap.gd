@@ -19,6 +19,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	
 #	if (player.global_transform.origin.z > redraw * num_draws):
 ##		ground.translate(Vector3(0,0,0.1))
