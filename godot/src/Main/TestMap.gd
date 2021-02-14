@@ -7,11 +7,12 @@ var num_draws = 1
 
 onready var ground = get_node("Ground")
 onready var player = get_node("../Player")
+onready var cylinders = get_node("Cylinders")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass	
+	pass
 	
 #	ground.mesh.size = Vector2(50,50)
 #	ground.create_convex_collision()
@@ -32,7 +33,8 @@ func _process(delta):
 
 func _on_Area_body_entered(body):
 	ground.translation.z += redraw
-
-
+	cylinders.translation.z += redraw
+	
 func _on_Area2_body_shape_entered(body_id, body, body_shape, area_shape):
 	ground.translation.z -= redraw
+	cylinders.translation.z -= redraw

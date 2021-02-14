@@ -14,7 +14,7 @@ onready var joystickLeft : Joystick = get_node(joystickLeftPath)
 
 func _get_configuration_warning() -> String:
 	return "Missing camera node" if not camera else ""
-
+#
 func _physics_process(_delta):
 	if joystickLeft and joystickLeft.is_working:
 			# Send to input map
@@ -22,8 +22,21 @@ func _physics_process(_delta):
 		jm_x.axis = 0
 		jm_x.axis_value = joystickLeft.output.x
 		Input.parse_input_event(jm_x) 
-		
+
 		var jm_y = InputEventJoypadMotion.new()
 		jm_y.axis = 1
 		jm_y.axis_value = joystickLeft.output.y
 		Input.parse_input_event(jm_y) 
+
+	elif not (Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_D)):
+		var jm_x = InputEventJoypadMotion.new()
+		jm_x.axis = 0
+		jm_x.axis_value = 0
+		Input.parse_input_event(jm_x) 
+
+		var jm_y = InputEventJoypadMotion.new()
+		jm_y.axis = 1
+		jm_y.axis_value = 0
+		Input.parse_input_event(jm_y) 
+
+		
