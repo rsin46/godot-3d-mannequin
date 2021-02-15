@@ -10,7 +10,7 @@
 [ext_resource path="res://src/Debug/DebugDock.gd" type="Script" id=8]
 [ext_resource path="res://src/Main/TestMap.gd" type="Script" id=9]
 [ext_resource path="res://src/Joystick/Joystick.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/Main/MultiMeshInstance.gd" type="Script" id=11]
+[ext_resource path="res://src/Main/Cylinders.gd" type="Script" id=11]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 30, 30 )

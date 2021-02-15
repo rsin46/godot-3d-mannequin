@@ -9,12 +9,15 @@ onready var skin: Mannequiny = $Mannequiny
 onready var state_machine: StateMachine = $StateMachine
 
 export (NodePath) var joystickLeftPath
-onready var joystickLeft : Joystick = get_node(joystickLeftPath)
+onready var joystickLeft : Joystick = get_node("../UI/Joystick")
 
 
 func _get_configuration_warning() -> String:
 	return "Missing camera node" if not camera else ""
 #
+func _ready():
+	print(joystickLeft.is_working)
+
 func _physics_process(_delta):
 	if joystickLeft and joystickLeft.is_working:
 			# Send to input map
